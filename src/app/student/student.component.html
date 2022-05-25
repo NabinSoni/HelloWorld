@@ -1,4 +1,16 @@
 <p>student works!</p>
 <h3>Angular Project</h3>
-<input type="text" [(ngModel)]="name"/>
-<span>{{name}}</span>
+<!-- two-way binding (Property Binding + Event Binding) -->
+<input type="text" [(ngModel)]="pen"/>
+<!--Server is just a name and we can write one line of sentence in place of Server-->
+<!--String Interpolation(It works with constants)-->
+<span>{{'Server'}} id = {{serverId}} and {{getServerName()}}</span>
+
+<!--Example of property binding(It works with variables)-->
+<button [disabled]="car">Submit</button>
+<input type="text" class="form-control" (input)="changeName($event)"/>
+<p *ngIf="car; else nocar">Hello World 1234</p><ng-template #nocar>Hi There!!</ng-template>
+
+<p [ngStyle]="{color:'pink'}">Joker is dancing</p>
+<p *ngFor="let num of a">{{num}}</p>
+<p *ngFor="let num of a; let i=index">{{num}}  {{i}}</p>

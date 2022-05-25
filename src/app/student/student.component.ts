@@ -9,9 +9,30 @@ import { Component, OnInit } from '@angular/core';
 })
 export class StudentComponent implements OnInit {
 
-  constructor() { }
+  constructor() { 
+    //It will execute under constructor
+    setTimeout(() => {
+      this.car = true
+    }, 2000);
+  }
 
   ngOnInit(): void {
   }
+  // Below are properties name , serverId
   name = "Hi Nabin";
+  pen = "My new Pen";
+  serverId : number = 12; // this is the way to restrict user from change variable data type
+  getServerName(){
+    return this.name;
+  }
+  car = false;
+  //one-type of binding (Event Binding)
+  changeName(event:Event){
+    this.name = (<HTMLInputElement>event.target).value;
+  }
+  //Array's format
+  a = [1,2,3,4];
+
+
+  
 }
